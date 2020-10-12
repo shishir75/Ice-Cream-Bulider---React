@@ -1,16 +1,18 @@
 import React from "react";
 import classes from "./Header.module.css";
+import logo from "../../assets/images/logo.svg";
+import reactLogo from "../../assets/images/react.svg";
 
 const Header = () => {
     return (
         <header>
-            <div className="container react" id="header">
+            <div className="container">
                 <div>
-                    <img className="logo" src="images/logo.svg" alt="Logo" />
+                    <img className={classes.logo} src={logo} alt="Logo" />
                 </div>
                 <div className="textRight">
                     <img
-                        src="images/react.svg"
+                        src={reactLogo}
                         alt="React"
                         className={classes.reactLogo}
                     />
