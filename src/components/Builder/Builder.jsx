@@ -4,15 +4,15 @@ import Items from "./Items/Items";
 import TotalPrice from "./TotalPrice/TotalPrice";
 import Modal from "./Modal/Modal";
 
-const Builder = () => {
+const Builder = ({ items, price, add, remove }) => {
     return (
         <div>
             <div className={classes.builder}>
                 <h3>Build your own Ice Cream Sundae</h3>
 
-                <Items />
+                <Items items={items} add={add} remove={remove} />
 
-                <TotalPrice />
+                <TotalPrice price={price} />
 
                 <button
                     type="button"

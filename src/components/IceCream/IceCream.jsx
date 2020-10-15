@@ -2,7 +2,9 @@ import React from "react";
 import classes from "./IceCream.module.css";
 import Scoop from "./Scoop/Scoop";
 
-const IceCream = () => {
+const IceCream = ({ scoops }) => {
+    // const flavors = Object.keys(scoops); // ['vanilla', 'chocolate', 'lemon', 'orange', 'strawberry], object to array conversion
+
     return (
         <div>
             <div className={classes.icecream}>
@@ -10,7 +12,10 @@ const IceCream = () => {
                 {/* <p>Please start adding scoops</p> */}
 
                 {/* scoop component */}
-                <Scoop />
+
+                {scoops.map((scoop) => (
+                    <Scoop scoop={scoop} key={scoop} />
+                ))}
                 <div className={classes.cherry} />
             </div>
         </div>
