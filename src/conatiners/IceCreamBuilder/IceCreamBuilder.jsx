@@ -61,6 +61,7 @@ class IceCreamBuilder extends Component {
                     price={totalPrice}
                     add={this.addScoop}
                     remove={this.removeScoop}
+                    scoops={scoops}
                 />
             </div>
         );

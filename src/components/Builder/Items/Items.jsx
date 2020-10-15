@@ -1,7 +1,7 @@
 import React from "react";
 import Item from "./Item/Item";
 
-const Items = ({ items, add, remove }) => {
+const Items = ({ items, add, remove, scoops }) => {
     const flavors = Object.keys(items);
     return (
         <div>
@@ -12,6 +12,7 @@ const Items = ({ items, add, remove }) => {
                         key={flavor}
                         add={add}
                         remove={remove}
+                        scoops={scoops}
                     />
                 ))}
             </ul>
