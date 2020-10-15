@@ -9,12 +9,9 @@ const IceCream = ({ scoops }) => {
         <div>
             <div className={classes.icecream}>
                 <p className={classes.cone} />
-                {/* <p>Please start adding scoops</p> */}
-
-                {/* scoop component */}
 
                 {scoops.map((scoop) => (
-                    <Scoop scoop={scoop} key={scoop} />
+                    <Scoop scoop={scoop} key={`${scoop}${Math.random()}`} />
                 ))}
                 <div className={classes.cherry} />
             </div>
