@@ -5,16 +5,20 @@ import IceCream from "../../components/IceCream/IceCream";
 
 class IceCreamBuilder extends Component {
     state = {
-        items: {
-            vanilla: 45,
-            chocolate: 50,
-            lemon: 35,
-            orange: 40,
-            strawberry: 60,
-        },
+        items: {},
         scoops: [],
         totalPrice: 0,
     };
+
+    componentDidMount() {
+        fetch("https://react-ice-cream-899f0.firebaseio.com/items.json")
+            .then((response) => response.json())
+            .then((responseData) => {
+                this.setState({
+                    items: responseData,
+                });
+            });
+    }
 
     addScoop = (scoop) => {
         const { scoops, items } = this.state;
